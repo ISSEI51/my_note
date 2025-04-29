@@ -1,0 +1,48 @@
+gitまとめ
+
+・git branch -a で確認
+
+・git checkout -b ブランチ名　でブランチを作成して移動
+
+・git push origin ブランチ名　でプッシュ(プルも同じ)
+
+・.gitignoreファイルに追記したファイルとフォルダは追跡されない
+
+	→/ファイル名　または /フォルダ名/
+	
+	git rm -r --cached SurveyMaster/originalform/migrations/
+	
+	で現在追跡中のファイル履歴を削除
+
+・新しい機能をつけるときのブランチ名は慣習的に feature/機能名
+
+バグの修正ブランチはfix/修正箇所
+
+戻したいとき
+
+①変更履歴のこらない
+
+・git reset --hard ハッシュ値
+
+②変更履歴のこる
+
+・git revert ハッシュ値
+
+マージ方法(ローカル)
+
+①mainブランチに移動
+
+②git merge ブランチ名
+
+マージ方法(リモート)
+
+①プルリクエストをする
+
+②コンフリクトがある場合、ローカルで解消してマージ
+
+	→mainをpull, featureブランチにマージしてfeatureブランチをpush
+
+
+そのままマージコミットを完了したい場合
+
+メッセージを編集せず、そのまま保存して閉じる（Vim の場合: Esc → :wq → Enter）。

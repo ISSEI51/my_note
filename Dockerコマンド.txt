@@ -1,0 +1,38 @@
+イメージインストール
+$ doker pull イメージ名
+
+一覧確認
+$ docker images
+
+起動中コンテナ一覧
+$ docker ps
+
+停止中も含めたすべてのコンテナ一覧
+$ docker ps -a
+
+コンテナ削除
+$ docker rm [コンテナID]
+
+イメージ削除
+$ docker rmi [イメージID]
+
+コンテナ作成&起動
+$ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+[OPTIONS] → -it, --name, -d などのオプション群
+
+IMAGE → 使用するDockerイメージ（例：ubuntu, python, nginx など）
+
+[COMMAND] → そのコンテナで実行したいコマンド（指定しなければデフォルト）
+
+・nameオプション: コンテナの識別子
+
+・dオプション: デタッチモード(バックグラウンドで起動)
+
+コンテナに入って操作
+$ docker exec -it [コンテナ名] bash
+
+・itオプション: コンテナ操作を現在のコンソールで行う
+
+コンテナから抜ける
+$ exit
